@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# mystylefile.pandoc luafilter.lua notes.md -> notes.pdf
+
+# pandoc -H mystylefile.pandoc \
+#     --highlight-style=pygments \
+#     --lua-filter ./luafilter.lua \
+#     notes.md \
+#     -o notes.pdf
+
+# color links
+
+pandoc -H mystylefile.pandoc \
+    -V colorlinks=true \
+    -V linkcolor=blue \
+    -V urlcolor=blue \
+    -V toccolor=gray \
+    --highlight-style=pygments \
+    --lua-filter ./luafilter.lua \
+    notes.md \
+    -o notes.pdf
